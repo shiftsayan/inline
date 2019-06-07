@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  7 JUN 2019 00:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  7 JUN 2019 00:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -56,16 +56,6 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@roff=\dimen104
 )
 \sa@box=\box27
-runsystem(pdflatex  -shell-escape  -jobname 'inline' '\expandafter\def\csname sa@internal@run\endcsname{1}\input{inline}')...disabled (restricted).
-
-\sa@read=\read1
-runsystem(convert -density 300 -units PixelsPerInch inline.pdf  -quality 90 inline.png)...disabled (restricted).
-
-
-
-Class standalone Warning: Conversion failed! Please ensure that shell escape
-(standalone)              is enabled (e.g. use '-shell-escape').
-
 ) (./inline.aux)
 \openout1 = `inline.aux'.
 
@@ -89,15 +79,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./inline.aux) ) 
 Here is how much of TeX's memory you used:
- 766 strings out of 492649
- 12178 string characters out of 6129622
- 70196 words of memory out of 5000000
- 4696 multiletter control sequences out of 15000+600000
+ 748 strings out of 492649
+ 11967 string characters out of 6129622
+ 69436 words of memory out of 5000000
+ 4681 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,4n,56p,185b,103s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on inline.pdf (1 page, 11644 bytes).
+Output written on inline.pdf (1 page, 11643 bytes).
 PDF statistics:
  12 PDF objects out of 1000 (max. 8388607)
  7 compressed objects within 1 object stream

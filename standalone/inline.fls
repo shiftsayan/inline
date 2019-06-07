@@ -32,10 +32,6 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
-INPUT ./inline.pdf
-INPUT inline.aux
-INPUT inline.aux
-INPUT ./inline.pdf
 INPUT inline.aux
 INPUT inline.aux
 OUTPUT inline.aux

@@ -2,6 +2,7 @@
 ######## Imports ########
 #########################
 
+import datetime
 import os
 
 #########################
@@ -12,41 +13,49 @@ def fetch():
     '''
     Get input from user via Vi
     '''
+    content = open("input", 'w+')
     os.system('vim ' + os.path.realpath("input"))
 
 def populate():
     '''
     Save user input into LaTeX document
     '''
+    os.system("cp " + os.path.realpath("template.tex") + " " + os.path.realpath("inline.tex"))
     content  = open("input", 'r').read()
-    skeleton = open("template.tex", 'r')
+    skeleton = open("inline.tex", 'r')
     document = skeleton.read().replace('[[placeholder]]', content)
     skeleton.close()
-    skeleton = open("template.tex", 'w+')
+    skeleton = open("inline.tex", 'w+')
     skeleton.write(document)
     skeleton.close()
 
 def render():
     '''
-    Compile .tex file to .dvi
+    Compile .tex file to .png
     '''
-    os.system("latex template.tex")
-    os.system("")
+    # .tex to .dvi
+    print("Rendering LaTeX...")
+    os.system("latex inline.tex >> /dev/null")
+    # .dvi to .png
+    print("Converting to PNG...")
+    os.system("dvipng inline.dvi -D 8192 -bg 'rgb 1 1 1' -q >> /dev/null")
 
 def save():
-    return
+    '''
+    Save .png to Desktop
+    '''
+    # Moving to desktop
+    print("Moving to desktop...")
+    os.system("mv " + os.path.realpath("inline1.png") + " ~/Desktop/" + datetime.datetime.now().isoformat() + ".png")
 
-def restore():
+def clean():
     '''
-    Restore input and template to original states and remove compile-time files
+    Remove compile-time files
     '''
-    content = open("input", 'w+')
-    content.write("")
-    os.remove(os.path.realpath("template.tex"))
-    os.remove(os.path.realpath("template.dvi"))
-    os.remove(os.path.realpath("template.aux"))
-    os.remove(os.path.realpath("template.log"))
-    os.system("cp " + os.path.realpath("template_backup.tex") + " " + os.path.realpath("template.tex"))
+    os.remove(os.path.realpath("inline.tex"))
+    os.remove(os.path.realpath("inline.dvi"))
+    os.remove(os.path.realpath("inline.aux"))
+    os.remove(os.path.realpath("inline.log"))
 
 #########################
 ##### Main Function #####
@@ -56,8 +65,8 @@ def main():
     fetch()
     populate()
     render()
-    # save()
-    restore()
+    save()
+    clean()
 
 if __name__ == '__main__':
     main()
