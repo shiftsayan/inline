@@ -27,18 +27,25 @@ def populate():
     skeleton.close()
 
 def render():
-    return
+    '''
+    Compile .tex file to .dvi
+    '''
+    os.system("latex template.tex")
+    os.system("")
 
 def save():
     return
 
 def restore():
     '''
-    Restore input and template to original states
+    Restore input and template to original states and remove compile-time files
     '''
     content = open("input", 'w+')
     content.write("")
     os.remove(os.path.realpath("template.tex"))
+    os.remove(os.path.realpath("template.dvi"))
+    os.remove(os.path.realpath("template.aux"))
+    os.remove(os.path.realpath("template.log"))
     os.system("cp " + os.path.realpath("template_backup.tex") + " " + os.path.realpath("template.tex"))
 
 #########################
@@ -48,7 +55,7 @@ def restore():
 def main():
     fetch()
     populate()
-    # render()
+    render()
     # save()
     restore()
 
