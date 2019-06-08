@@ -2,7 +2,7 @@
 ######## Imports ########
 #########################
 
-import datetime
+import datetime as dt
 import os
 
 #########################
@@ -44,13 +44,17 @@ def save():
     '''
     Save .png to Desktop
     '''
+    path = " ~/Desktop/" + dt.datetime.now().strftime("Inline\ %y-%m-%d\ at\ %H.%M.%S.png")
     # Moving to desktop
     print("Moving to desktop...")
-    os.system("mv " + os.path.realpath("inline1.png") + " ~/Desktop/" + datetime.datetime.now().isoformat() + ".png")
+    os.system("mv " + os.path.realpath("inline1.png") + path)
+    # Copying to clipboard
+    print("Copying to clipboard...")
+    os.system("osascript -e 'on run args' -e 'set the clipboard to POSIX file (first item of args)' -e end" + path)
 
 def clean():
     '''
-    Remove compile-time files
+    Remove LaTeX compilation files
     '''
     os.remove(os.path.realpath("inline.tex"))
     os.remove(os.path.realpath("inline.dvi"))
