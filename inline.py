@@ -44,7 +44,7 @@ def save():
     '''
     Save .png to Desktop
     '''
-    path = " ~/Desktop/" + dt.datetime.now().strftime("Inline\ %y-%m-%d\ at\ %H.%M.%S.png")
+    path = " ~/Desktop/" + dt.datetime.now().strftime("Inline\ %Y-%m-%d\ at\ %I.%M.%S\ %p.png")
     # Moving to desktop
     print("Moving to desktop...")
     os.system("mv " + os.path.realpath("inline1.png") + path)
