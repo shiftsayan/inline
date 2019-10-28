@@ -12,7 +12,7 @@ Though you interact with Inline via a Python script, it does most of the heavy l
 * `dvipng` for conversion to PNG
 * `osascript` for copying the resulting PNG to the clipboard
 
-Apart from `LaTeX`, I believe macOS comes packaged with installations of `dvipng` and `osascript`.
+I believe macOS comes with installations of `dvipng` and `osascript`, so you'll only need to install `LaTeX`. `brew cask install mactex` should do the trick.
 
 ### Use
 * Run `python inline.py`.
